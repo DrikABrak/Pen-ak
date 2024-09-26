@@ -1,5 +1,5 @@
 //
-//  Pen_akApp.swift
+//  PenakApp.swift
 //  Peñak
 //
 //  Created by Cedric Trespeuch on 23/08/2024.
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct Pen_akApp: App {
+struct PenakApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Item.self,
@@ -28,5 +28,6 @@ struct Pen_akApp: App {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        .environment(SupaService(api: SupaAPI()))
     }
 }

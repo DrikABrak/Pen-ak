@@ -7,20 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		489A8CD52C78CA3F00FA79FD /* Pen_akApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489A8CD42C78CA3F00FA79FD /* Pen_akApp.swift */; };
+		4896B8B12C9C5872007AA11A /* SupaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896B8B02C9C5872007AA11A /* SupaAPI.swift */; };
+		489A8CD52C78CA3F00FA79FD /* PenakApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489A8CD42C78CA3F00FA79FD /* PenakApp.swift */; };
 		489A8CD72C78CA3F00FA79FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489A8CD62C78CA3F00FA79FD /* ContentView.swift */; };
 		489A8CD92C78CA3F00FA79FD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489A8CD82C78CA3F00FA79FD /* Item.swift */; };
 		489A8CDB2C78CA4300FA79FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489A8CDA2C78CA4300FA79FD /* Assets.xcassets */; };
 		489A8CDE2C78CA4300FA79FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489A8CDD2C78CA4300FA79FD /* Preview Assets.xcassets */; };
+		489A8CF12C78CC9E00FA79FD /* SupaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489A8CF02C78CC9E00FA79FD /* SupaService.swift */; };
+		489A8CF42C78CDD900FA79FD /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 489A8CF32C78CDD900FA79FD /* Auth */; };
+		489A8CF62C78CDD900FA79FD /* Functions in Frameworks */ = {isa = PBXBuildFile; productRef = 489A8CF52C78CDD900FA79FD /* Functions */; };
+		489A8CF82C78CDD900FA79FD /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 489A8CF72C78CDD900FA79FD /* PostgREST */; };
+		489A8CFA2C78CDD900FA79FD /* Realtime in Frameworks */ = {isa = PBXBuildFile; productRef = 489A8CF92C78CDD900FA79FD /* Realtime */; };
+		489A8CFC2C78CDD900FA79FD /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 489A8CFB2C78CDD900FA79FD /* Storage */; };
+		489A8CFE2C78CDD900FA79FD /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 489A8CFD2C78CDD900FA79FD /* Supabase */; };
+		489A8D002C78CF9600FA79FD /* SupaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489A8CFF2C78CF9600FA79FD /* SupaModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4896B8B02C9C5872007AA11A /* SupaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupaAPI.swift; sourceTree = "<group>"; };
 		489A8CD12C78CA3F00FA79FD /* Peñak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Peñak.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		489A8CD42C78CA3F00FA79FD /* Pen_akApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pen_akApp.swift; sourceTree = "<group>"; };
+		489A8CD42C78CA3F00FA79FD /* PenakApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PenakApp.swift; sourceTree = "<group>"; };
 		489A8CD62C78CA3F00FA79FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		489A8CD82C78CA3F00FA79FD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		489A8CDA2C78CA4300FA79FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		489A8CDD2C78CA4300FA79FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		489A8CF02C78CC9E00FA79FD /* SupaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupaService.swift; sourceTree = "<group>"; };
+		489A8CFF2C78CF9600FA79FD /* SupaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupaModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +40,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				489A8CF82C78CDD900FA79FD /* PostgREST in Frameworks */,
+				489A8CF62C78CDD900FA79FD /* Functions in Frameworks */,
+				489A8CFE2C78CDD900FA79FD /* Supabase in Frameworks */,
+				489A8CF42C78CDD900FA79FD /* Auth in Frameworks */,
+				489A8CFC2C78CDD900FA79FD /* Storage in Frameworks */,
+				489A8CFA2C78CDD900FA79FD /* Realtime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +71,8 @@
 		489A8CD32C78CA3F00FA79FD /* Peñak */ = {
 			isa = PBXGroup;
 			children = (
-				489A8CD42C78CA3F00FA79FD /* Pen_akApp.swift */,
+				489A8CEF2C78CC7600FA79FD /* API */,
+				489A8CD42C78CA3F00FA79FD /* PenakApp.swift */,
 				489A8CD62C78CA3F00FA79FD /* ContentView.swift */,
 				489A8CD82C78CA3F00FA79FD /* Item.swift */,
 				489A8CDA2C78CA4300FA79FD /* Assets.xcassets */,
@@ -68,6 +87,16 @@
 				489A8CDD2C78CA4300FA79FD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		489A8CEF2C78CC7600FA79FD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4896B8B02C9C5872007AA11A /* SupaAPI.swift */,
+				489A8CF02C78CC9E00FA79FD /* SupaService.swift */,
+				489A8CFF2C78CF9600FA79FD /* SupaModels.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +115,14 @@
 			dependencies = (
 			);
 			name = "Peñak";
+			packageProductDependencies = (
+				489A8CF32C78CDD900FA79FD /* Auth */,
+				489A8CF52C78CDD900FA79FD /* Functions */,
+				489A8CF72C78CDD900FA79FD /* PostgREST */,
+				489A8CF92C78CDD900FA79FD /* Realtime */,
+				489A8CFB2C78CDD900FA79FD /* Storage */,
+				489A8CFD2C78CDD900FA79FD /* Supabase */,
+			);
 			productName = "Peñak";
 			productReference = 489A8CD12C78CA3F00FA79FD /* Peñak.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +151,9 @@
 				Base,
 			);
 			mainGroup = 489A8CC82C78CA3F00FA79FD;
+			packageReferences = (
+				489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			productRefGroup = 489A8CD22C78CA3F00FA79FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,7 +182,10 @@
 			files = (
 				489A8CD72C78CA3F00FA79FD /* ContentView.swift in Sources */,
 				489A8CD92C78CA3F00FA79FD /* Item.swift in Sources */,
-				489A8CD52C78CA3F00FA79FD /* Pen_akApp.swift in Sources */,
+				489A8CD52C78CA3F00FA79FD /* PenakApp.swift in Sources */,
+				489A8D002C78CF9600FA79FD /* SupaModels.swift in Sources */,
+				489A8CF12C78CC9E00FA79FD /* SupaService.swift in Sources */,
+				4896B8B12C9C5872007AA11A /* SupaAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +244,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -258,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -282,14 +325,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.drikabrak.Pen-ak";
+				PRODUCT_BUNDLE_IDENTIFIER = com.drikabrak.penak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -311,14 +354,14 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.drikabrak.Pen-ak";
+				PRODUCT_BUNDLE_IDENTIFIER = com.drikabrak.penak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -348,6 +391,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		489A8CF32C78CDD900FA79FD /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		489A8CF52C78CDD900FA79FD /* Functions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Functions;
+		};
+		489A8CF72C78CDD900FA79FD /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		489A8CF92C78CDD900FA79FD /* Realtime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Realtime;
+		};
+		489A8CFB2C78CDD900FA79FD /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		489A8CFD2C78CDD900FA79FD /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 489A8CF22C78CDD900FA79FD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 489A8CC92C78CA3F00FA79FD /* Project object */;
 }

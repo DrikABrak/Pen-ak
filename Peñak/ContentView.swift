@@ -7,50 +7,74 @@
 
 import SwiftUI
 import SwiftData
+import Supabase
+import MapKit
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
-
+    
+    @Environment(SupaService.self) private var supaService
+    
+    let position = MapCameraPosition.region(
+        MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 43.49021072745114, longitude: -1.475038761148427),
+            span: MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015)
+        )
+    )
+    
+    @State var clickedPena: Item? = nil
+    
     var body: some View {
-        NavigationSplitView {
-            List {
+        
+        ZStack {
+            Map(initialPosition: position) {
                 ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                    Annotation(item.name, coordinate: CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)) {
+                        Image(systemName: "star.circle")
+                            .resizable()
+                            .foregroundStyle(.red)
+                            .frame(width: 30, height: 30)
+                            .background(.white)
+                            .clipShape(.circle)
+                            .onTapGesture {
+                                print(item.name)
+                                self.clickedPena = item
+                            }
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
+                    //.annotationTitles(.hidden)
+                    //Marker(item.name, coordinate: CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude))
                 }
             }
-        } detail: {
-            Text("Select an item")
+        }
+        .sheet(item: $clickedPena) { pena in
+            Text("Open \(pena.name)")
+                .presentationDetents([.medium, .large])
+        }
+        .task {
+            await self.supaService.getPeñak()
+            updateItems()
         }
     }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+    private func updateItems() {
+        
+        for pena in supaService.peñak {
+            // Create a peña in SwiftData if not exist
+            guard let item = items.first(where: { $0.id == pena.id }) else {
+                let item = Item(id: pena.id, name: pena.name, address: pena.address, longitude: pena.longitude, latitude: pena.latitude)
+                modelContext.insert(item)
+                try? modelContext.save()
+                continue
             }
+
+            // Else update peña
+            item.name = pena.name
+            item.address = pena.address
+            item.longitude = pena.longitude
+            item.latitude = pena.latitude
+            
+            try? modelContext.save()
         }
     }
 }
