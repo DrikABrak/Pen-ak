@@ -28,5 +28,3 @@ class SupaService {
         }
     }
 }
-
-//import Observation
